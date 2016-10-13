@@ -118,6 +118,9 @@ a.logIn {
 	color: black;
 }
 
+.frontEnd , .backEnd, .php, .motivators {
+	text-align: center;
+}
 
 ::-webkit-scrollbar {
 	width: 10px;
