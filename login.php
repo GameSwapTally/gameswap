@@ -40,10 +40,8 @@
 				<a href="signUp.php">Sign Up</a><br>
 			</form>
 			<?php
-                                //echo "testing...";
 				if (isset($_POST["submit"]))
 				{
-                                        //echo "running..";
 					if (empty($_POST["email"]) || empty($_POST["password"]))
 						echo "Error: not all fields are field. Try again!";
 					else
@@ -75,13 +73,6 @@
 
                                                         setcookie("email", $email, strtotime( '+30 days' ), "/", "", "", TRUE);
                                                         setcookie("password", $password, strtotime( '+30 days' ), "/", "", "", TRUE);
-
-                                                        if(!isset($_COOKIE[$user])) {
-                                                            echo "Cookie named '" . $cookie_name . "' is not set!";
-                                                        } else {
-                                                            echo "Cookie '" . $cookie_name . "' is set!<br>";
-                                                            echo "Value is: " . $_COOKIE[$cookie_name];
-                                                        }
 
 							echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.html\">";
 						}
