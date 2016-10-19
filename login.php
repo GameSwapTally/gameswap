@@ -27,7 +27,7 @@
 				</div>
 			</div> <!-- end Header -->
 			<br>
-			<form action="">
+			<form action="" method="post">
 				<h1>Log in</h1>
 				<p>
 					<input type="email" name="email" id="email" placeholder="E-mail..."/>
@@ -35,27 +35,54 @@
 				<p>
 					<input type="password" name="password" id="password" placeholder="Password..."/>
 				</p>
-				<input type="submit" value="Log In"><br><br>
+				<input type="submit" name="submit" value="Log In"><br><br>
 				<a href="passwordReset.html">Forgot Password?</a><br>
 				<a href="signUp.php">Sign Up</a><br>
 			</form>
 			<?php
-			
+                                //echo "testing...";
 				if (isset($_POST["submit"]))
 				{
+                                        //echo "running..";
 					if (empty($_POST["email"]) || empty($_POST["password"]))
 						echo "Error: not all fields are field. Try again!";
 					else
 					{
-						$email = $_POST['email'];
+						$servername = "localhost";
+                                                $username = "root";
+                                                $pass = "";
+                                                
+                                                $email = $_POST['email'];
 						$password = $_POST['password'];
+                                                 
+                                                $connection = mysql_connect($servername, $username, $pass);
+                                                mysql_select_db('gameswaptally_test', $connection); 
+
 						$sql = "SELECT * FROM users WHERE email = '".$email."'
 						AND password = '".$password."'";
+                                                //$connection = mysql_connect($servername, $username, $pass);
 						if(!mysql_query($sql,$connection))
 							die('Error: ' . mysql_error());
+                                                    
+                                               //mysql_select_db('gameswaptally_test', $connection); 
+
 						if ($sql)
 						{
 							// login , cookies and shit. Then redirect to the index page
+
+                                                        $_SESSION['email'] = $email;
+                                                        $_SESSION['password'] = $password;
+
+                                                        setcookie("email", $email, strtotime( '+30 days' ), "/", "", "", TRUE);
+                                                        setcookie("password", $password, strtotime( '+30 days' ), "/", "", "", TRUE);
+
+                                                        if(!isset($_COOKIE[$user])) {
+                                                            echo "Cookie named '" . $cookie_name . "' is not set!";
+                                                        } else {
+                                                            echo "Cookie '" . $cookie_name . "' is set!<br>";
+                                                            echo "Value is: " . $_COOKIE[$cookie_name];
+                                                        }
+
 							echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.html\">";
 						}
 						else

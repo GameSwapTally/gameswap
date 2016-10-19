@@ -49,6 +49,12 @@
 			</form>
 			
 			<?php
+
+                
+                        if(isset($_COOKIE['email'])) {
+                            echo "User logged in is: " . $_COOKIE['email'];
+                        }
+
 			
 			$servername = "localhost";
 			$username = "root";
