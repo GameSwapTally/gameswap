@@ -1,4 +1,6 @@
 --------------- Game Swap Tally README ---------------
+
+
 How to complile:
     Currently none of the source code is written in a language that
     requires compiling.
