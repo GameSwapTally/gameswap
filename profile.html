@@ -15,7 +15,7 @@
 		<div class="wrapper">
 			<div class="Header">
 				<div id="left0">
-					<h1>Logo</h1>
+					<a href="index.html"><h1>Logo</h1></a>
 				</div>
 				<div id="right0">
 					<a href="https://www.cs.fsu.edu/"><img src="asset/fsu1.png" 
