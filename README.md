@@ -11,8 +11,8 @@ How to run:
     for the database.  To run this application on your machine locally, XAMPP
     is recommended.  Using phpMyAdmin you can import the included .sql file
     into a new database called 'gameswaptally_test'.  Additionally, everything
-    is also hosted on our server and can be run by typing 54.209.151.46 into
-    your favorite browser's address bar.
+    is also hosted on our server and can be run by typing
+    gameswaptally.github.io into your favorite browser's address bar.
 
 How to run the unit test cases:
     -HTML test cases:
@@ -26,8 +26,9 @@ How to run the unit test cases:
 
 Acceptance Tests for an External Person to Try:
     -navigate to the signup page, and try to create an account on the site
-    -navigate to the login page and try to enter the information of the
-     account you just made
-    -navigate to the browse page and see if you see your email as the user
-     logged in.
+    -check yor email for your account activation link
+    -activate your account and try to log into you profile
+    -view your profile after logging in
+    -search for games on the browse page
+    -refine your search for games on the browse page
 
