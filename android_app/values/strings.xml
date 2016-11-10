@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">GameSwap</string>
+
+    <string name="title_section1">Profile</string>
+    <string name="title_section2">Browse</string>
+    <string name="title_section3">Events</string>
+    <string name="title_section4">Contact</string>
+    <string name="title_section5">Terms</string>
+
+
+    <string name="hello_world">Hello world!</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="LoginGet">Login - Get</string>
+    <string name="LoginPost">Login - Post</string>
+    <string name="App">Login Application</string>
+    <string name="LoginStatus">Login Status</string>
+    <string name="LoginRole">Login Role</string>
+    <string name="Status">Not login</string>
+    <string name="Role">Not assigned</string>
+    <string name="method">Login Method</string>
+    <string name="Choose">Choose Method</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+    <string name="games"></string>
+
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_signin">SigninActivity</string>
+</resources>
