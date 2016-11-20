@@ -102,8 +102,8 @@ if(isset($_POST["e"])){
 						onmouseover="this.src='asset/fsu2.png'" height="50" width="50"/></a>
 					<a href="https://github.com/GameSwapTally/gameswap"><img src="asset/Github1.png" 
 						onmouseover="this.src='asset/Github2.png'" height="50" width="50"/></a>
-					<a href="logIn.php" class="logIn">Log In</a>
-					<a href="signUp.php">Sign Up</a>
+					<a href="login.php" class="logIn">Log In</a>
+					<a href="signup.php">Sign Up</a>
 				</div>
 			</div> <!-- end Header -->
 			<br>
@@ -116,7 +116,7 @@ if(isset($_POST["e"])){
 		    <br /><br />
 		    <button id="loginbtn" onclick="login()">Log In</button> 
 		    <p id="status"></p>
-		    <a href="#">Forgot Your Password?</a>
+		    <a href="forgot_password.php">Forgot Your Password?</a>
 		  </form>
 			
 			<!-- <form action="" method="post">
