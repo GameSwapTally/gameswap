@@ -36,6 +36,14 @@ while ($row = mysqli_fetch_array($user_query, MYSQLI_ASSOC)) {
 	$joindate = strftime("%b %d, %Y", strtotime($signup));
 	$lastsession = strftime("%b %d, %Y", strtotime($lastlogin));
 }
+
+if($u == $log_username && $user_ok == true)  // show edit profile link only if this is your profile
+{
+	echo '<a href="/editprofile.php">Edit Profile</a>';
+	echo '<br>';
+	echo '<a href="/logout.php">Logout</a>';
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +57,7 @@ while ($row = mysqli_fetch_array($user_query, MYSQLI_ASSOC)) {
 </head>
 <body>
 <div id="pageMiddle">
-  <h3><?php echo $u; ?></h3>
+  <h1><?php echo $u; ?>'s Profile</h1>
   <p>Is the viewer the page owner, logged in and verified? <b><?php echo $isOwner; ?></b></p>
   <p>Join Date: <?php echo $joindate; ?></p>
   <p>Last Session: <?php echo $lastsession; ?></p>
