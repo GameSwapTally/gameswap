@@ -11,7 +11,7 @@ $lastsession = "";
 if(isset($_GET["u"])){
 	$u = preg_replace('#[^a-z0-9]#i', '', $_GET['u']);
 } else {
-    header("location: http://www.yoursite.com");
+    header("location: index.html");
     exit();	
 }
 // Select the member from the users table
