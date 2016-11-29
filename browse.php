@@ -13,7 +13,7 @@
 		<div class="wrapper">
 			<div class="Header">
 				<div id="left0">
-					<a href="index.html"><h1><img src="logo.png" alt="GameSwapTally"></img></h1></a>
+					<a href="index.html"><img src="logo.png" alt="GameSwapTally"></img></a>
 				</div>
 				<div id="right0">
 					<a href="https://www.cs.fsu.edu/"><img src="asset/fsu1.png" 
@@ -38,6 +38,7 @@
 			mysql_select_db('gameswaptally', $connection);
 			
 			?>
+			<br><br>
 			<h1>Browse</h1>
 			<form name="game_search" method="POST">
 			<p><strong>These fields are optional.</strong></p>
