@@ -5,15 +5,15 @@
 			Fall 2016 group project with Dr.Nistor."> 
 		<meta name="keywords" content="FSU, Florida State University, Software Engineering, CEN4020, 
 			Games, Video Games">
-		<link rel="stylesheet" type="text/css" href="form.css">
-		<link rel="stylesheet" type="text/css" href="general.css">
+		<link rel="stylesheet" type="text/css" href="css/form.css">
+		<link rel="stylesheet" type="text/css" href="css/general.css">
 		<link rel="icon" type="image/png" href="asset/baby.png">
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="Header">
 				<div id="left0">
-					<h1>Logo</h1>
+					<a href="index.html"><h1><img src="logo.png" alt="GameSwapTally"></img></h1></a>
 				</div>
 				<div id="right0">
 					<a href="https://www.cs.fsu.edu/"><img src="asset/fsu1.png" 
