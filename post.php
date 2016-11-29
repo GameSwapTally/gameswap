@@ -24,9 +24,22 @@
 		$content = $row["content"];
 		$gametitle = $row["gametitle"];
 		$platform = $row["platform"];
+		$username = $row["user"];
+	}
+
+
+	$sql = "SELECT email FROM users WHERE username = '$username'";
+	$query = mysqli_query($db_conx, $sql);
+	while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+		$email = $row["email"];
 	}
 ?>
 
+<a href="browseposts.php">&lt; Back to All Posts</a>
 <h2><?php echo $title; ?></h2>
 <h3><?php echo $gametitle." for ".$platform; ?></h3>
 <p><?php echo $content; ?></p>
+<?php echo '<a href="mailto:'.$email.'?Subject=RE: '.$title.'">Contact Poster</a>'; ?>
+
+
+
