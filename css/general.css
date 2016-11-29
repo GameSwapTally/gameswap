@@ -34,7 +34,7 @@ body, html {
 }
 
 a.BrowseButton {
-	background-color: #bb432c;
+	background-color: #CEB888;
     padding: 8px 15px 8px 15px;
     border: none;
     color: white;
@@ -119,6 +119,7 @@ a {
 
 h1 {
 	color: #CEB888;
+	text-align: center;
 }
 
 a.logIn {
