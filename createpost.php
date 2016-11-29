@@ -59,7 +59,23 @@
 	<select name="platform">
 		<option value=""></option>
 		<option value="PlayStation 4">PlayStation 4</option>
+		<option value="PlayStation 3">PlayStation 3</option>
+		<option value="PlayStation 2">PlayStation 2</option>
+		<option value="PlayStation">PlayStation</option>
 		<option value="Xbox One">Xbox One</option>
+		<option value="Xbox 360">Xbox 360</option>
+		<option value="Xbox">Xbox</option>
+		<option value="Wii U">Wii U</option>
+		<option value="Wii">Wii</option>
+		<option value="Nintendo GameCube">Nintendo GameCube</option>
+		<option value="Nintendo 64">Nintendo 64</option>
+		<option value="Super Nintendo Entertainment System">Super Nintendo Entertainment System</option>
+		<option value="Nintendo Entertainment System">Nintendo Entertainment System</option>
+		<option value="Nintendo 3DS">Nintendo 3DS</option>
+		<option value="Nintendo DS">Nintendo DS</option>
+		<option value="Game Boy Advance">Game Boy Advance</option>
+		<option value="Game Boy Color">Game Boy Color</option>
+		<option value="Game Boy">Game Boy</option>
 	</select>
 	<div>Price: $</div>
 	<input type="text" name="price"><br>
