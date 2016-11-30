@@ -105,14 +105,14 @@ if(isset($_POST["u"])){
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<title>Register | GameSwapTally</title>
+	<title>Sign Up -  GameSwapTally</title>
 		<meta name="description" content="Florida State University Software Engineering (CEN4020) 
 			Fall 2016 group project with Dr.Nistor."> 
 		<meta name="keywords" content="FSU, Florida State University, Software Engineering, CEN4020, 
 			Games, Video Games">
 		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<link rel="stylesheet" type="text/css" href="css/general.css">
-		<link rel="icon" type="image/png" href="asset/baby.png">
+		<link rel="icon" type="image/png" href="asset/favicon.png">
 	<script src="js/main.js"></script>
 <script src="js/ajax.js"></script>
 <script>
@@ -142,6 +142,7 @@ function checkusername(){
         ajax.send("usernamecheck="+u);
 	}
 }
+
 function signup(){
 	var u = _("username").value;
 	var e = _("email").value;
@@ -172,6 +173,7 @@ function signup(){
         ajax.send("u="+u+"&e="+e+"&p="+p1);
 	}
 }
+
 function openTerms(){
 	_("terms").style.display = "block";
 	emptyElement("status");
@@ -187,7 +189,7 @@ window.onload = addEvents; */
 		<div class="wrapper">
 			<div class="Header">
 				<div id="left0">
-					<a href="index.html"><img src="logo.png" alt="GameSwapTally"></img></a>
+					<a href="index.html"><img src="logo.png" alt="GameSwapTally" id="homeLogo"></img></a>
 				</div>
 				<div id="right0">
 					<a href="https://www.cs.fsu.edu/"><img src="asset/fsu1.png" 
@@ -216,8 +218,12 @@ window.onload = addEvents; */
 		      </a>
 		    </div>
 		    <div id="terms" style="display:none;">
-		      <h3>Game Swap Tally Terms Of Use</h3>
-		      <p>Insert Terms here</p>
+		      <h3>GAMESWAPTALLY TERMS OF USE</h3>
+		      <p>By accessing and using this website, you accept and agree to be bound by the terms and provisions of this agreement. In addition, when using this websites particular services, you shall be subject to any posted guidelines or rules applicable to such services, which may be posted and modified from time to time. All such guidelines or rules are hereby incorporated by reference into the TOS.</p>
+
+			<p><strong>ANY PARTICIPATION IN THIS SITE WILL CONSTITUTE ACCEPTANCE OF THIS AGREEMENT. IF YOU DO NOT AGREE TO ABIDE BY THE ABOVE, PLEASE DO NOT USE THIS SITE.</strong></p>
+
+			<p>This site and its components are offered for informational purposes only; this site shall not be responsible or liable for the accuracy, usefulness or availability of any information transmitted or made available via the site, and shall not be responsible or liable for any error or omissions in that information. We are not liable for any personal harm received as a result of using our website nor are we liable for damage to products exchanged through our services. This site uses the email provided by you so that other users can contact you to reply to your posts.</p>
 		    </div>
 		    <br /><br />
 		    <button id="signupbtn" onclick="signup()">Create Account</button>

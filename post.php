@@ -34,18 +34,21 @@
 	}
 ?>
 
+
+<!DOCTYPE HTML>
+<html>
 <head>
-		<title>Terms | GameSwapTally</title>
+		<title>Post - GameSwapTally</title>
 		<meta name="description" content="Florida State University Software Engineering (CEN4020) 
 			Fall 2016 group project with Dr.Nistor."> 
 		<meta name="keywords" content="FSU, Florida State University, Software Engineering, CEN4020, 
 			Games, Video Games">
 		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<link rel="stylesheet" type="text/css" href="css/general.css">
-		<link rel="icon" type="image/png" href="asset/baby.png">
+		<link rel="icon" type="image/png" href="asset/favicon.png">
 </head>
-
-<div class="wrapper">
+<body>
+	<div class="wrapper>
 			<div class="Header">
 				<div id="left0">
 					<a href="index.html"><img src="logo.png" alt="GameSwapTally"></img></a>
@@ -62,6 +65,8 @@
 			<br>
 			<br>
 			<br>
+			<br>
+			<br>
 <a href="browseposts.php">&lt; Back to All Posts</a>
 <h2><?php echo $title; ?></h2>
 <h3><?php echo $gametitle." for ".$platform; ?></h3>
@@ -73,3 +78,6 @@
 	<a href="contact.html">Contact</a>
 	<a href="terms.html">Terms</a>	
 </div>
+</div>
+</body>
+</html>

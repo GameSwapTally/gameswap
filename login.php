@@ -13,6 +13,7 @@ if(isset($_POST["e"])){
 	// GATHER THE POSTED DATA INTO LOCAL VARIABLES AND SANITIZE
 	$e = mysqli_real_escape_string($db_conx, $_POST['e']);
 	$p = $_POST['p'];
+	
 	// GET USER IP ADDRESS
     $ip = preg_replace('#[^0-9.]#', '', getenv('REMOTE_ADDR'));
 	// FORM DATA ERROR HANDLING
@@ -52,14 +53,14 @@ if(isset($_POST["e"])){
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<title>Log in | GameSwapTally</title>
+	<title>Log in - GameSwapTally</title>
 		<meta name="description" content="Florida State University Software Engineering (CEN4020) 
 			Fall 2016 group project with Dr.Nistor."> 
 		<meta name="keywords" content="FSU, Florida State University, Software Engineering, CEN4020, 
 			Games, Video Games">
 		<link rel="stylesheet" type="text/css" href="css/form.css">
 		<link rel="stylesheet" type="text/css" href="css/general.css">
-		<link rel="icon" type="image/png" href="asset/baby.png">
+		<link rel="icon" type="image/png" href="asset/favicon.png">
 		<script src="js/main.js"></script>
 		<script src="js/ajax.js"></script>
 		<script>
@@ -95,7 +96,7 @@ if(isset($_POST["e"])){
 		<div class="wrapper">
 			<div class="Header">
 				<div id="left0">
-					<a href="index.html"><img src="logo.png" alt="GameSwapTally"></img></a>
+					<a href="index.html"><img src="logo.png" alt="GameSwapTally" id="homeLogo"></img></a>
 				</div>
 				<div id="right0">
 					<a href="https://www.cs.fsu.edu/"><img src="asset/fsu1.png" 
@@ -113,10 +114,11 @@ if(isset($_POST["e"])){
 		    <input type="text" id="email" onfocus="emptyElement('status')" maxlength="88">
 		    <div>Password:</div>
 		    <input type="password" id="password" onfocus="emptyElement('status')" maxlength="100">
+			<br>
+			<a href="forgot_password.php">Forgot Your Password?</a>
 		    <br /><br />
 		    <button id="loginbtn" onclick="login()">Log In</button> 
 		    <p id="status"></p>
-		    <a href="forgot_password.php">Forgot Your Password?</a>
 		  </form>
 			
 			<!-- <form action="" method="post">

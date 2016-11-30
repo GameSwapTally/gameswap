@@ -21,6 +21,7 @@ if(isset($_POST["e"])){
 		$randNum = rand(10000,99999);
 		$tempPass = "$emailcut$randNum";
 		//$hashTempPass = md5($tempPass);
+		//$cryptpass = crypt($temppass);
 		$sql = "UPDATE users SET temp_password='$tempPass' WHERE username='$u' LIMIT 1";
 	    $query = mysqli_query($db_conx, $sql);
 		$to = "$e";
@@ -78,6 +79,8 @@ if(isset($_GET['u']) && isset($_GET['p'])){
 <title>Forgot Password</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="css/form.css">
+<link rel="stylesheet" type="text/css" href="css/general.css">
 <style type="text/css">
 #forgotpassform{
 	margin-top:24px;	
@@ -126,15 +129,37 @@ function forgotpass(){
 </script>
 </head>
 <body>
+
+			<div class="Header">
+				<div id="left0">
+					<a href="index.html"><img src="logo.png" alt="GameSwapTally" id="homeLogo"></img></a>
+				</div>
+				<div id="right0">
+					<a href="https://www.cs.fsu.edu/"><img src="asset/fsu1.png" 
+						onmouseover="this.src='asset/fsu2.png'" height="50" width="50"/></a>
+					<a href="https://github.com/GameSwapTally/gameswap"><img src="asset/Github1.png" 
+					onmouseover="this.src='asset/Github2.png'" height="50" width="50"/></a>
+					<a href="login.php" class="logIn">Log In</a>
+					<a href="signup.php">Sign Up</a>
+				</div>
+			</div> <!-- end Header -->
+			<br>
+
+
 <div id="pageMiddle">
-  <h3>Generate a temorary log in password</h3>
+  <h1>Generate a temorary log in password</h1>
   <form id="forgotpassform" onsubmit="return false;">
-    <div>Step 1: Enter Your Email Address</div>
+    Step 1: Enter Your Email Address
     <input id="email" type="text" onfocus="_('status').innerHTML='';" maxlength="88">
     <br /><br />
     <button id="forgotpassbtn" onclick="forgotpass()">Generate Temporary Log In Password</button> 
     <p id="status"></p>
   </form>
 </div>
+
+			<div id="browseFooter">
+				<a href="about.html">About</a>
+				<a href="terms.html">Terms</a>
+			</div>
 </body>
 </html>
