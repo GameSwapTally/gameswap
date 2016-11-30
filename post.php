@@ -48,7 +48,7 @@
 		<link rel="icon" type="image/png" href="asset/favicon.png">
 </head>
 <body>
-	<div class="wrapper>
+	<div class="wrapper">
 			<div class="Header">
 				<div id="left0">
 					<a href="index.html"><img src="logo.png" alt="GameSwapTally"></img></a>
@@ -71,7 +71,22 @@
 <h2><?php echo $title; ?></h2>
 <h3><?php echo $gametitle." for ".$platform; ?></h3>
 <p><?php echo $content; ?></p>
-<?php echo '<a href="mailto:'.$email.'?Subject=RE: '.$title.'">Contact Poster</a>'; ?>
+<br><br>
+
+<?php 
+
+echo '<a href="mailto:'.$email.'?Subject=RE: '.$title.'">Contact Poster</a>'; 
+
+	echo '<br><br>';
+	$imgsql = "SELECT image, imagename FROM users WHERE username='$username'";
+	$imgquery = mysqli_query($db_conx, $imgsql);
+	$imgresult = mysqli_fetch_array($imgquery);
+	$encode = base64_encode( $imgresult['image'] );
+	echo '<img src="data:image/jpeg;base64,'.$encode.'" height="100" width="100" border="4"/>';
+	echo '              Posted by:  ';
+	echo $username;
+
+?>
 
 <div id="browseFooter">
 	<a href="about.html">About</a>
