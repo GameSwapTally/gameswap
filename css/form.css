@@ -18,8 +18,34 @@ form {
 	position: relative;
 }
 
+form#forgotpassform
+{
+	width: 500px;
+	color: white;
+	padding-top: 1px;
+	position: relative;	
+}
+
+form#userForm
+{
+	
+	text-align: center;
+}
+
 label, textarea, input{
 	display: block;	
+}
+
+#homeLogo
+{
+	float: left;
+}
+
+#pageMiddle
+{
+	text-align: center;
+	display: block;
+	margin: 0 auto;
 }
 
 input, textarea{
@@ -78,6 +104,33 @@ input[type="submit"]:hover{
 	
 }
 
+input#email
+{
+	display: block;
+	margin: 0 auto;
+}
+button{
+	background-color: white;
+	color: #CEB888;
+	height: 50px;
+	cursor: pointer;
+	margin-top: 30px;
+	font-size: 1.29em;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	-webkit-transition: background-color 0.5s;
+	-moz-transition: background-color 0.5s;
+	-o-transition: background-color 0.5s;
+	transition: background-color 0.5s;
+	border-radius: 0.5em;
+	display: block;
+	margin: 0 auto;
+}
+
+button:hover{
+	background-color: #e58f0e;
+	
+}
+
 label{
 	color: #CEB888;
 	font-size: 1.5em;
@@ -109,4 +162,9 @@ h1 {
 .passwordReset {
 	text-align: center;
 	margin: 0 auto;
+}
+
+#loginform {
+	top: 50%;
+	position: relative;
 }

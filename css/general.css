@@ -4,12 +4,21 @@ body, html {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	background-color: #782F40;
 
+	padding: 0;
+
+}
+
+.wrapper
+{
+	min-height: 100%;
+	position: relative;
 }
 
 .Header {
 		height:60px;
 		padding:0px;
 }
+
 
 #left0 {
 	float: left;
@@ -47,6 +56,7 @@ a.BrowseButton {
 	padding-top: 50px;
 	padding-bottom:90px;
 	background-color: #FFFFFF;
+	margin: -9px;
 }
 
 #left1 {
@@ -63,6 +73,7 @@ a.BrowseButton {
 	margin-top: 1px;
 	padding-top: 0px;
 	padding-bottom: 260pt;
+	margin: -9px;
 }
 
 #left2 {
@@ -80,6 +91,7 @@ a.BrowseButton {
 	padding-top: 50px;
 	padding-bottom:50px;
 	background-color: #FFFFFF;
+	margin: -9px;
 	/*border:1px solid #bbb;*/
 }
 
@@ -103,11 +115,13 @@ a.BrowseButton {
 }
 
 #browseFooter {
-		position: absolute;
-		padding-top: 30px;
+		position: relative;
+		/*padding-top: 30px;*/
 		bottom: 0;
 		left: 0;
 		right: 0;
+		height: 60px;
+		width: 100%;
 		text-align: center;
 }
 
@@ -126,9 +140,17 @@ a.logIn {
 	color: black;
 }
 
+.termAgreement
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 30em;
+}
+
 .frontEnd , .backEnd, .php, .motivators {
 	text-align: center;
 }
+
 
 ::-webkit-scrollbar {
 	width: 10px;
