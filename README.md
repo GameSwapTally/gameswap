@@ -7,13 +7,12 @@ How to complile:
 
 How to run:
     Since all components of the project are currently web-based, the code
-    needs to be run on a web server such as Apache (including proper modeules 
-    for PHP), as well as a mySQL server for the database.  To run this 
-    application on your machine locally, XAMPP is recommended.  Using 
-    phpMyAdmin you can import the included .sql file into a new database 
-    called 'gameswaptally'.  Howvever, we highly recommend running everything
-    off of our server, which can be accessed by typing gameswaptally.github.io 
-    into your favorite browser's address bar.
+    needs to be run on a web server such as Apache, as well as a mySQL server
+    for the database.  To run this application on your machine locally, XAMPP
+    is recommended.  Using phpMyAdmin you can import the included .sql file
+    into a new database called 'gameswaptally_test'.  Additionally, everything
+    is also hosted on our server and can be run by typing 54.209.151.46 into
+    your favorite browser's address bar.
 
 How to run the unit test cases:
     -HTML test cases:
@@ -26,16 +25,9 @@ How to run the unit test cases:
         Apache and a mySQL database.
 
 Acceptance Tests for an External Person to Try:
--upon visiting the site navigate to the sign up page and fill out the form
--after submitting the form, you should recieve an email notification with a
- link to activate your account
--navigate to the log in page and try to log into your account.
-  NOTE: if you do not wish to create an account, you can use the following log
-        in information: email: demo@gameswaptally.com password: gstdemo
--navigate to the edit profile page and edit your profile
--navigate to the create post page and create a post
--navigate to the browse post page and browse all posts or search for a
- specific post
--delete one of your posts from your profile page
--log out of the site from your profile page
+    -navigate to the signup page, and try to create an account on the site
+    -navigate to the login page and try to enter the information of the
+     account you just made
+    -navigate to the browse page and see if you see your email as the user
+     logged in.
 

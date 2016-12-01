@@ -1,3 +1,4 @@
+
 <?php
 	// include necessary php files to get username from login session
 	include_once("php_includes/check_login_status.php");
@@ -27,7 +28,7 @@
 		<div class="wrapper">
 			<div class="Header">
 				<div id="left0">
-					<a href="index.html"><img src="logo.png" alt="GameSwapTally" id="homeLogo"></img></a>
+					<a href="index.php"><img src="logo.png" alt="GameSwapTally" id="homeLogo"></img></a>
 				</div>
 				<div id="right0">
 					<a href="https://www.cs.fsu.edu/"><img src="asset/fsu1.png" 
@@ -39,10 +40,8 @@
 			<br><br>
 			
 		<?php
-			// must account for change of username when making session header
-			// not working yet!
 		//if ($username == $_SESSION['username'])
-			echo '<div style="text-align:right"><a href="/user.php?u='.$username.'">Return to Profile</a></div>';
+			echo '<div style="text-align:center"><a href="/user.php?u='.$username.'">< Return to Profile</a></div>';
 		//else
 			//echo '<a href="/user.php?u='.$newusername.'">Return to Profile</a>';
 		?>
@@ -143,7 +142,7 @@
 
 			<div id="footer">
 				<a href="about.html">About</a>
-				<a href="contact.html">Contact</a>
+				<a href="contact.php">Contact</a>
 				<a href="terms.html">Terms</a>
 			</div>
 		</div> <!-- end wrapper -->

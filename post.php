@@ -1,5 +1,23 @@
 <?php
 	include_once("php_includes/check_login_status.php");
+
+	if ($user_ok == false) {
+		$link1 = "login.php";
+		$label1 = "Log In";
+		$link2 = "signup.php";
+		$label2 = "Sign Up";
+	}
+
+	else if ($user_ok == true) {
+		$link1 = "user.php?u=".$log_username;
+		$label1 = "My Profile";
+		$link2 = "logout.php";
+		$label2 = "Logout";
+	}
+?>
+
+<?php
+	include_once("php_includes/check_login_status.php");
 	$db_conx = mysqli_connect("localhost", "root", "meat", "gameswaptally");
 
 	if ($user_ok == true) {
@@ -13,7 +31,7 @@
 		$p = (int)$_GET["p"];
 		//echo $p;
 	} else {
-		header("location: browseposts.php");
+		header("location: browse.php");
 	}
 
 	$sql = "SELECT * FROM posts WHERE id='$p' LIMIT 1";
@@ -51,15 +69,17 @@
 	<div class="wrapper">
 			<div class="Header">
 				<div id="left0">
-					<a href="index.html"><img src="logo.png" alt="GameSwapTally"></img></a>
+					<a href="index.php"><img src="logo.png" alt="GameSwapTally" id="homeLogo"></img></a>
 				</div>
 				<div id="right0">
 					<a href="https://www.cs.fsu.edu/"><img src="asset/fsu1.png" 
 						onmouseover="this.src='asset/fsu2.png'" height="50" width="50"/></a>
 					<a href="https://github.com/GameSwapTally/gameswap"><img src="asset/Github1.png" 
 						onmouseover="this.src='asset/Github2.png'" height="50" width="50"/></a>
-					<a href="login.php" class="logIn">Log In</a>
-					<a href="signup.php">Sign Up</a>
+					<?php
+						echo "<a href='".$link1."'>".$label1."</a>";
+						echo "<a href='".$link2."'>".$label2."</a>";
+					?>
 				</div>
 			</div> <!-- end Header -->
 			<br>
@@ -67,7 +87,8 @@
 			<br>
 			<br>
 			<br>
-<a href="browseposts.php">&lt; Back to All Posts</a>
+<div id="postPage">
+<a href="browse.php">&lt; Back to All Posts</a>
 <h2><?php echo $title; ?></h2>
 <h3><?php echo $gametitle." for ".$platform; ?></h3>
 <p><?php echo $content; ?></p>
@@ -83,14 +104,15 @@ echo '<a href="mailto:'.$email.'?Subject=RE: '.$title.'">Contact Poster</a>';
 	$imgresult = mysqli_fetch_array($imgquery);
 	$encode = base64_encode( $imgresult['image'] );
 	echo '<img src="data:image/jpeg;base64,'.$encode.'" height="100" width="100" border="4"/>';
-	echo '              Posted by:  ';
+	echo '            <br>  Posted by:';
 	echo $username;
 
 ?>
-
+</div>
+<br>
 <div id="browseFooter">
 	<a href="about.html">About</a>
-	<a href="contact.html">Contact</a>
+	<a href="contact.php">Contact</a>
 	<a href="terms.html">Terms</a>	
 </div>
 </div>

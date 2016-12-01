@@ -55,7 +55,7 @@ while($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
 			<div id="footer">
 				<a href="about.html">About</a>
-				<a href="contact.html">Contact</a>
+				<a href="contact.php">Contact</a>
 				<a href="terms.html">Terms</a>
 			</div>
 		</div> <!-- end wrapper -->

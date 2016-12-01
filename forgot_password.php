@@ -77,7 +77,8 @@ if(isset($_GET['u']) && isset($_GET['p'])){
 <head>
 <meta charset="UTF-8">
 <title>Forgot Password</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/png" href="asset/favicon.png">
 <link rel="stylesheet" href="style/style.css">
 <link rel="stylesheet" type="text/css" href="css/form.css">
 <link rel="stylesheet" type="text/css" href="css/general.css">
@@ -132,7 +133,7 @@ function forgotpass(){
 
 			<div class="Header">
 				<div id="left0">
-					<a href="index.html"><img src="logo.png" alt="GameSwapTally" id="homeLogo"></img></a>
+					<a href="index.php"><img src="logo.png" alt="GameSwapTally" id="homeLogo"></img></a>
 				</div>
 				<div id="right0">
 					<a href="https://www.cs.fsu.edu/"><img src="asset/fsu1.png" 
@@ -159,6 +160,7 @@ function forgotpass(){
 
 			<div id="browseFooter">
 				<a href="about.html">About</a>
+				<a href="contact.php">Contact</a>
 				<a href="terms.html">Terms</a>
 			</div>
 </body>

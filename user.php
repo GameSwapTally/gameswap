@@ -97,7 +97,7 @@
  <?php
 
  //showing your posts
- $swapsql = "SELECT DISTINCT `swap`.`title`, `swap`.`system`, `swap`.`price`
+ $swapsql = "SELECT DISTINCT `swap`.`title`, `swap`.`system`, `swap`.`price`, `swap`.`swapID`
 			FROM `swap`,`users`
 			WHERE `swap`.`userID`=(SELECT `users`.`id`
 							FROM `users`
@@ -108,7 +108,7 @@
  {
 		echo '<h3>My Swap Posts</h3>';
 		//$linkaddress = "post.php?p=".$row["id"];
-		echo '<table width= "100%" cellpadding="2" cellspacing="2" border="1"';
+		echo '<table bgcolor="#919191" width= "100%" cellpadding="2" cellspacing="2" border="1"';
 		echo '<thead>
 		<tr>
 		<th>#</th>
@@ -122,6 +122,7 @@
 		<input name="delswapcheckbox[]" type="checkbox" value="<?php echo $row['swapID'];?>"></td>
 		<?php
 		echo "</td><td>" . $row['title'] . "</td><td>" . $row['system'] . "</td><td>" .  $row['price'] . "</td></tr>";
+		
 		}
 		echo '</table>';
 		//echo $linkaddress."\n";
@@ -138,12 +139,18 @@
 		for($i=0;$i<count($checkbox);$i++)
 		{
 			$deleteID = $checkbox[$i];
-			$deletesql = "DELETE FROM `swap` WHERE swapID='$deleteID'";
+			$deletesql = "DELETE FROM `posts` WHERE `id`= 
+							(SELECT `postID` FROM `swap` WHERE `swapID` = '$deleteID')";
+			$deleteresult = mysqli_query($db_conx, $deletesql);
+			$deletesql = "DELETE FROM `swap` WHERE `swapID`='$deleteID'";
 			$deleteresult = mysqli_query($db_conx, $deletesql);
 		}
 
 		if($deleteresult)
-		echo "<meta http-equiv=\"refresh\" content=\"0;URL=user.php\">";
+		{
+			echo "Your swap selection has been deleted! Please refresh to see results.";
+			header("Refresh:0");
+		}
 		
 	}
 }
@@ -152,7 +159,7 @@ else
  ?>
  <?php
 		// showing your personal wish list
-		$wishsql = "SELECT DISTINCT `wished`.`title`, `wished`.`system`
+		$wishsql = "SELECT DISTINCT `wished`.`title`, `wished`.`system`, `wished`.`wishID`
 				FROM `wished`,`users`
 				WHERE `wished`.`userID`=(SELECT `users`.`id`
 							FROM `users`
@@ -165,7 +172,7 @@ if ($wishrowcount > 0)
 		echo '<h3>My Wish Posts</h3>';
 		//echo $row["title"] ." ".$row["id"];
 		//$linkaddress = "post.php?p=".$row["id"];
-		echo '<table width= "100%" cellpadding="2" cellspacing="2" border="1"';
+		echo '<table bgcolor="#919191" width= "100%" cellpadding="2" cellspacing="2" border="1"';
 		echo '<thead>
 		<tr>
 		<th>#</th>
@@ -175,7 +182,7 @@ if ($wishrowcount > 0)
 		</thead>';
 		while($row2 = mysqli_fetch_array($wishresult, MYSQLI_ASSOC)) {
 		echo "<tr><td>"; ?>
-		<input name="delwishcheckbox[]" type="checkbox" value="<?php echo $row['wishID'];?>"></td>
+		<input name="delwishcheckbox[]" type="checkbox" value="<?php echo $row2['wishID'];?>"></td>
 		<?php
 			echo "</td><td>" . $row2['title'] . "</td><td>" . $row2['system'] .  "</td></tr>";
 		}
@@ -187,7 +194,6 @@ if ($wishrowcount > 0)
 		 <input name="deletewish" type="submit" value="Delete">
 <?php
 		
-		
 		// delete from swap list
 	 if(isset($_POST['deletewish']))
 	{
@@ -195,11 +201,17 @@ if ($wishrowcount > 0)
 		for($i=0;$i<count($checkbox);$i++)
 		{
 			$deleteID = $checkbox[$i];
-			$deletesql = "DELETE FROM wished WHERE wishID='$deleteID'";
+			$deletesql = "DELETE FROM `posts` WHERE `id`= 
+							(SELECT `postID` FROM `wished` WHERE `wishID` = '$deleteID')";
+			$deleteresult = mysqli_query($db_conx, $deletesql);
+			$deletesql = "DELETE FROM `wished` WHERE `wishID`='$deleteID'";
 			$deleteresult = mysqli_query($db_conx, $deletesql);
 		}
 		if($deleteresult)
-			echo "<meta http-equiv=\"refresh\" content=\"0;URL=user.php\">";
+		{
+			echo "Your wish selection has been deleted! Please refresh to see results.";
+			header("Refresh:0");
+		}
 	}
 }
 	else
